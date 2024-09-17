@@ -11,6 +11,7 @@ Parameters:
     
   AdminEmail:
       Type: String
+      Default: "ayushanand.panday@minfytech.com"
       Description: >-
         (Required) Email address for the admin user. Will be used for logging in and for setting the admin password. 
         This email will receive the temporary password for the admin user.
@@ -27,12 +28,12 @@ Parameters:
 
   BulkUploadMaxDripRate:
     Type: String
-    Default: "25"
+    Default: "5"
     Description: Maximum number of files that the bulk uploader will move to the PCA source bucket in one pass
 
   BulkUploadMaxTranscribeJobs:
     Type: String
-    Default: "50"
+    Default: "10"
     Description: Number of concurrent Transcribe jobs (executing or queuing) where bulk upload will pause
 
   ComprehendLanguages:
@@ -221,7 +222,7 @@ Parameters:
 
   CallRedactionTranscript:
     Type: String
-    Default: true
+    Default: false
     AllowedValues:
         - true
         - false
@@ -229,7 +230,7 @@ Parameters:
 
   CallRedactionAudio:
     Type: String
-    Default: true
+    Default: false
     AllowedValues:
         - true
         - false
@@ -301,7 +302,7 @@ Parameters:
 
   EnableGui:
     Type: String
-    Default: "true"
+    Default: "false"
     AllowedValues:
         - "true"
         - "false"
@@ -379,7 +380,7 @@ Parameters:
       - DEV
       - TEST
       - PROD
-    Default: PROD
+    Default: DEV
     
   DatabaseName:
     Type: String
@@ -388,7 +389,7 @@ Parameters:
 
   EnablePcaDashboards:
     Type: String
-    Default: 'No'
+    Default: 'Yes'
     AllowedValues:
         - 'No'
         - 'Yes'
@@ -398,7 +399,7 @@ Parameters:
       steps required in Amazon QuickSight to (1) enable S3 access to PCA OutputBucket and (2) share dashboard and analytics assets.
 
   GenAIQuery:
-    Default: 'BEDROCK'
+    Default: 'DISABLED'
     Type: String
     AllowedValues:
       - 'DISABLED'
